@@ -1,10 +1,261 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: red;
-  color: blue;
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
 }
-body p {
-  color: yellow;
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(23, 93, 247);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(15, 77, 212);
+}
+
+body {
+  font-family: Inter, sans-serif;
+  height: 100vh;
+}
+
+#sidebar-container {
+  position: fixed;
+  width: 270px;
+  height: 100%;
+  left: 0;
+  color: #f7f9ff;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(0, 80, 255);
+  background: rgb(23, 93, 247);
+  transition: all 0.3s ease-out;
+}
+#sidebar-container.active {
+  transform: translateX(-230px);
+  transition: all 0.3s ease-out;
+}
+#sidebar-container .logo {
+  padding: 12px 10px 12px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(0, 80, 255);
+}
+#sidebar-container .logo .company-brand {
+  margin-left: 5px;
+}
+#sidebar-container .logo .side-arrow {
+  width: 25px;
+  height: 25px;
+  border: 3px solid rgb(23, 93, 247);
+  background: rgb(255, 255, 255);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  right: -12.5px;
+  top: auto;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#sidebar-container .logo .side-arrow.active {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+#sidebar-container .menu {
+  padding: 20px 10px 20px 10px;
+  color: rgb(128, 167, 255);
+  overflow-x: hidden;
+  height: 100%;
+  overflow-y: auto;
+}
+#sidebar-container .menu .menu-item {
+  padding: 10px 12px 0px 12px;
+  margin: 5px 0px;
+  font-size: 13px;
+  height: 23px;
+}
+#sidebar-container .menu .menu-link {
+  color: rgb(255, 255, 255);
+  padding: 3px 4px 3px 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 15px;
+  height: 46px;
+  margin: 3px 0px;
+}
+#sidebar-container .menu .menu-link.active {
+  border-radius: 8px;
+  background: rgb(15, 77, 212);
+}
+#sidebar-container .menu .menu-link:first-child {
+  margin: 0;
+}
+#sidebar-container .menu .menu-link:last-child {
+  margin-bottom: 3rem;
+}
+
+.page-container {
+  margin-left: 270px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+  background-color: rgb(150, 30, 30);
+}
+.page-container.w-wider {
+  margin-left: 40px;
+  transition: all 0.3s ease-out;
+}
+
+#header-container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 25px 5px 25px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  background: rgb(255, 255, 255);
+}
+#header-container .left-content .finance-btn {
+  padding: 4px 8px 4px 8px;
+  border-radius: 4px;
+  background: rgb(142, 64, 255);
+  border: none;
+  outline: none;
+  width: 108px;
+  height: 34px;
+}
+#header-container .left-content .finance-btn span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 1%;
+  color: rgb(255, 255, 255);
+}
+#header-container .right-content {
+  position: relative;
+  height: 54px;
+  width: auto;
+}
+#header-container .right-content .navbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#header-container .right-content .nav-item {
+  padding: 0;
+}
+#header-container .right-content .nav-item .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+#header-container .right-content .nav-item .nav-link .svg-box {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#header-container .right-content .nav-item .nav-link .svg-box .alarm-info {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  background: rgb(204, 46, 46);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  right: 7px;
+  top: 3px;
+}
+#header-container .right-content .nav-item .nav-link .divider {
+  width: 1px;
+  height: 30px;
+  background: rgb(153, 153, 153);
+  margin: 0px 6px;
+}
+@media (max-width: 991px) {
+  #header-container .right-content .nav-item .nav-link .divider {
+    display: none;
+  }
+}
+#header-container .right-content .nav-item .nav-link.dropdown-toggle::after {
+  display: none;
+}
+#header-container .right-content .nav-item .dropdown-menu {
+  font-size: 12px;
+}
+#header-container .right-content .nav-item.account-detail .dropdown-menu {
+  right: 0;
+  left: unset;
+  font-size: 12px;
+}
+#header-container .right-content .nav-item.account-detail .dropdown-toggle {
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 54px;
+}
+#header-container .right-content .nav-item.account-detail .dropdown-toggle::after {
+  display: none;
+}
+#header-container .right-content .nav-item.account-detail .dropdown-toggle .account-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  margin-right: 10px;
+  background-color: rgb(23, 93, 247);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 600;
+}
+#header-container .right-content .nav-item.account-detail .dropdown-toggle .account-info {
+  margin-right: 10px;
+}
+#header-container .right-content .nav-item.account-detail .dropdown-toggle .account-info .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(41, 41, 41);
+}
+#header-container .right-content .nav-item.account-detail .dropdown-toggle .account-info .title {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(41, 41, 41, 0.5);
+}
+@media (max-width: 991px) {
+  #header-container .right-content .navbar-collapse .navbar-nav {
+    background: rgb(225, 225, 225);
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+  #header-container .right-content .navbar .container-fluid {
+    justify-content: flex-end;
+  }
+  #header-container .right-content .navbar .nav-item .nav-link {
+    justify-content: flex-end;
+  }
+}
+
+.content {
+  height: 100%;
+  background-color: rgb(190, 175, 175);
 }
 
 /*# sourceMappingURL=styles.css.map */

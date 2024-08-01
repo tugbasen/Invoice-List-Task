@@ -1,14 +1,302 @@
 // styles.scss
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 10px;
+}
 
-$primary-color: red;
-$secondary-color: blue;
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(23, 93, 247);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(15, 77, 212);
+}
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: $primary-color;
-  color: $secondary-color;
+  font-family: Inter, sans-serif;
+  height: 100vh;
+}
 
-  p {
-    color: yellow;
+// Sidebar
+#sidebar-container {
+  position: fixed;
+  width: 270px;
+  height: 100%;
+  left: 0;
+  color: #f7f9ff;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(0, 80, 255);
+  background: rgb(23, 93, 247);
+  transition: all 0.3s ease-out;
+
+  &.active {
+    transform: translateX(-230px);
+    transition: all 0.3s ease-out;
   }
+
+  .logo {
+    padding: 12px 10px 12px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(0, 80, 255);
+
+    .company-brand {
+      margin-left: 5px;
+    }
+
+    .side-arrow {
+      width: 25px;
+      height: 25px;
+      border: 3px solid rgb(23, 93, 247);
+      background: rgb(255, 255, 255);
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      right: -12.5px;
+      top: auto;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        transform: rotate(180deg);
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .menu {
+    padding: 20px 10px 20px 10px;
+    color: rgb(128, 167, 255);
+    overflow-x: hidden;
+    height: 100%;
+    overflow-y: auto;
+
+    .menu-item {
+      padding: 10px 12px 0px 12px;
+      margin: 5px 0px;
+      font-size: 13px;
+      height: 23px;
+    }
+
+    .menu-link {
+      color: rgb(255, 255, 255);
+      padding: 3px 4px 3px 4px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 15px;
+      height: 46px;
+      margin: 3px 0px;
+
+      &.active {
+        border-radius: 8px;
+        background: rgb(15, 77, 212);
+      }
+
+      &:first-child {
+        margin: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+.page-container {
+  margin-left: 270px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+  background-color: rgb(150, 30, 30);
+
+  &.w-wider {
+    margin-left: 40px;
+    transition: all 0.3s ease-out;
+  }
+}
+
+#header-container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 25px 5px 25px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  background: rgb(255, 255, 255);
+
+  .left-content {
+    .finance-btn {
+      padding: 4px 8px 4px 8px;
+      border-radius: 4px;
+      background: rgb(142, 64, 255);
+      border: none;
+      outline: none;
+      width: 108px;
+      height: 34px;
+
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: 1%;
+        color: rgb(255, 255, 255);
+      }
+    }
+  }
+  .right-content {
+    position: relative;
+    height: 54px;
+    width: auto;
+
+    .navbar {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .nav-item {
+      padding: 0;
+
+      .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        .svg-box {
+          width: 54px;
+          height: 54px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          .alarm-info {
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            background: rgb(204, 46, 46);
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            right: 7px;
+            top: 3px;
+          }
+        }
+
+        .divider {
+          width: 1px;
+          height: 30px;
+          background: rgb(153, 153, 153);
+          margin: 0px 6px;
+
+          @media (max-width: 991px) {
+            display: none;
+          }
+        }
+
+        &.dropdown-toggle {
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        font-size: 12px;
+      }
+
+      &.account-detail {
+        .dropdown-menu {
+          right: 0;
+          left: unset;
+          font-size: 12px;
+        }
+
+        .dropdown-toggle {
+          padding: 0px 10px 0px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          height: 54px;
+
+          &::after {
+            display: none;
+          }
+
+          .account-img {
+            width: 34px;
+            height: 34px;
+            border-radius: 100%;
+            margin-right: 10px;
+            background-color: rgb(23, 93, 247);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          .account-info {
+            margin-right: 10px;
+            .name {
+              font-size: 14px;
+              font-weight: 600;
+              color: rgb(41, 41, 41);
+            }
+
+            .title {
+              font-size: 12px;
+              font-weight: 500;
+              color: rgba(41, 41, 41, 0.5);
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        .navbar-nav {
+          background: rgb(225 225 225);
+          border-radius: 3px;
+          margin-top: 5px;
+        }
+      }
+
+      .navbar {
+        .container-fluid {
+          justify-content: flex-end;
+        }
+        .nav-item {
+          .nav-link {
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content {
+  height: 100%;
+  background-color: rgb(190, 175, 175);
 }

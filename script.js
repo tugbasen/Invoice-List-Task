@@ -12,4 +12,7 @@ $(document).ready(function () {
 
   //Header dosyasını yükle
   $("#header-container").load("components/header.html");
+
+  // İçerik dosyasını yükle
+  $("#contents").load("components/contents.html");
 });

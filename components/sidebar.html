@@ -81,8 +81,9 @@
         </svg>
     </div>
 </div>
-<div class="menu">
-    <a href="#" class="menu-link">
+<div class="menu nav nav-tabs" id="myTab" role="tablist">
+    <a class="nav-link menu-link" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" type="button"
+        role="tab" aria-controls="dashboard" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -115,7 +116,8 @@
         <span class="me-2">Dashboard</span>
     </a>
     <div class="menu-item">SALES</div>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="invoices-tab" data-bs-toggle="tab" data-bs-target="#invoices"
+        type="button" role="tab" aria-controls="invoices" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -148,7 +150,8 @@
         </svg>
         <span class="me-2">Invoices</span>
     </a>
-    <a href="#" class="menu-link active">
+    <a href="#" class="nav-link menu-link active" id="incomes-tab" data-bs-toggle="tab" data-bs-target="#incomes"
+        type="button" role="tab" aria-controls="incomes" aria-selected="true">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -185,7 +188,8 @@
         </svg>
         <span class="me-2">Incomes</span>
     </a>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="customers-tab" data-bs-toggle="tab" data-bs-target="#customers"
+        type="button" role="tab" aria-controls="customers" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -230,7 +234,8 @@
         <span class="me-2">Customers</span>
     </a>
     <div class="menu-item">PURCHASE</div>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="bills-tab" data-bs-toggle="tab" data-bs-target="#bills" type="button"
+        role="tab" aria-controls="bills" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -261,7 +266,8 @@
         </svg>
         <span class="me-2">Bills</span>
     </a>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="expenses-tab" data-bs-toggle="tab" data-bs-target="#expenses"
+        type="button" role="tab" aria-controls="expenses" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -298,7 +304,8 @@
         </svg>
         <span class="me-2">Expenses</span>
     </a>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="vendors-tab" data-bs-toggle="tab" data-bs-target="#vendors" type="button"
+        role="tab" aria-controls="vendors" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -345,7 +352,8 @@
         <span class="me-2">Vendors</span>
     </a>
     <div class="menu-item">CASH</div>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="cashbank-tab" data-bs-toggle="tab" data-bs-target="#cashbank"
+        type="button" role="tab" aria-controls="cashbank" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -398,7 +406,8 @@
         </svg>
         <span class="me-2">Cash & Banks</span>
     </a>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="cashflow-tab" data-bs-toggle="tab" data-bs-target="#cashflow"
+        type="button" role="tab" aria-controls="cashflow" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -439,7 +448,8 @@
         <span class="me-2">Cash Flow</span>
     </a>
     <div class="menu-item">STOCK</div>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="products-tab" data-bs-toggle="tab" data-bs-target="#products"
+        type="button" role="tab" aria-controls="products" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -469,7 +479,8 @@
         <span class="me-2">Products & Services</span>
     </a>
     <div class="menu-item">ACOUNTING</div>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="transactions-tab" data-bs-toggle="tab" data-bs-target="#transactions"
+        type="button" role="tab" aria-controls="transactions" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -507,7 +518,8 @@
         </svg>
         <span class="me-2">Transactions</span>
     </a>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="accounts-tab" data-bs-toggle="tab" data-bs-target="#accounts"
+        type="button" role="tab" aria-controls="accounts" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>
@@ -537,10 +549,11 @@
                 </g>
             </g>
         </svg>
-        <span class="me-2">Cahrt of Accouns</span>
+        <span class="me-2">Chart of Accounts</span>
     </a>
     <div class="menu-item">REPORTS</div>
-    <a href="#" class="menu-link">
+    <a href="#" class="nav-link menu-link" id="reports-tab" data-bs-toggle="tab" data-bs-target="#reports" type="button"
+        role="tab" aria-controls="reports" aria-selected="false">
         <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <desc>

@@ -260,8 +260,8 @@
                                 <span class="input-group-text" id="inputGroup-sizing-sm"><i
                                         class="bi bi-search"></i></span>
                             </div>
-                            <input type="text" class="form-control" aria-label="Small" placeholder="Search"
-                                aria-describedby="inputGroup-sizing-sm">
+                            <input type="text" class="form-control" id="searchInput" aria-label="Small"
+                                placeholder="Search" aria-describedby="inputGroup-sizing-sm">
                         </div>
                         <div class="pane-print dropdown">
                             <a class="dropdown-toggle print" href="#" role="button" data-bs-toggle="dropdown"
@@ -307,7 +307,7 @@
                                 <td class="date-row" data-type="paid">
                                     <div class="date-info">
                                         <div class="date-payment">Paid</div>
-                                        <div class="date-text">overdue</div>
+                                        <div class="date-text"></div>
                                     </div>
                                     <div class="date-subitle">Due Date: 12/01/2023</div>
                                 </td>
@@ -1355,6 +1355,7 @@
         // Initial update
         updateChoosedCount();
 
+
         /*****************************************************************************************************************************************/
 
         // Create main table
@@ -1362,7 +1363,7 @@
             var table = $('#incomes-overdue').DataTable({
                 select: false,
                 "order": [],
-                "searching": false,
+                "dom": 'lrtip',
                 "pageLength": 5,
                 "lengthChange": false,
                 "language": {
@@ -1400,7 +1401,11 @@
                         orderable: false
                     }
                 ]
-            }); //End of create main table
+            });
+
+            $('#searchInput').on('keyup', function () {
+                table.search(this.value).draw();
+            });
         });
     </script>
 </div>

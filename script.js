@@ -1,8 +1,8 @@
-// Sidebar'ı index dosyasına yükleme ve Sidebar açma/kapama işlemleri
+// Load the sidebar into the index file and Sidebar open/close operations
 $(document).ready(function () {
-  // Sidebar ve header dosyalarını yükle
+  // Load the sidebar and header files
   $("#sidebar-container").load("components/sidebar.html", function () {
-    // Sidebar yüklendikten sonra tıklama olayını ekle
+    // Add click event after the sidebar is loaded
     $(document).on("click", ".side-arrow", function () {
       $(this).toggleClass("active");
       $("#sidebar-container").toggleClass("active");
@@ -10,9 +10,9 @@ $(document).ready(function () {
     });
   });
 
-  //Header dosyasını yükle
+  // Load the header file
   $("#header-container").load("components/header.html");
 
-  // İçerik dosyasını yükle
+  // Load the contents file
   $("#contents").load("components/contents.html");
 });

@@ -687,12 +687,148 @@ body {
         }
 
         .pane-table {
-          padding: 0px 15px 0px 15px;
+          // padding: 0px 15px 15px 15px;
           background: rgb(255, 255, 255);
           border: 1px solid rgb(237, 237, 240);
           border-bottom-left-radius: 8px;
           border-bottom-right-radius: 8px;
-          height: 500px;
+          height: 100%;
+
+          .jquery-table {
+            margin-bottom: 10rem;
+
+            thead {
+              font-size: 14px;
+              tr {
+                th {
+                  color: rgb(82, 83, 85);
+                  font-size: 14px;
+                  font-weight: 500;
+                  border-right: 1px solid rgb(218, 218, 222);
+                  border-bottom: 1px solid rgb(218, 218, 222);
+
+                  &:last-child {
+                    border-right: none;
+
+                    &.sorting {
+                      background-image: none !important;
+                      &::after {
+                        display: none;
+                      }
+                    }
+                  }
+
+                  &.status {
+                    text-align: center;
+                    background-image: none !important;
+                    &::after {
+                      display: none;
+                    }
+                  }
+
+                  &.amount {
+                    text-align: right;
+                  }
+                }
+              }
+
+              .sorting {
+                background-image: url(/images/soring_both.png);
+                background-size: 14px;
+              }
+
+              .sorting_asc {
+                background-image: url(/images/soring_asc.png) !important;
+                background-size: 12px;
+              }
+
+              .sorting_desc {
+                background-image: url(/images/soring_desc.png) !important;
+                background-size: 12px;
+              }
+            }
+
+            tbody {
+              font-size: 13px;
+              tr {
+                td {
+                  &.amount {
+                    text-align: right;
+                  }
+                  &.detail,
+                  &.date {
+                    padding-left: 15px;
+                  }
+                  &.amount {
+                    padding-right: 0;
+                  }
+                  &.status,
+                  &.action {
+                    text-align: center;
+                  }
+                }
+
+                &.odd {
+                  background-color: transparent;
+
+                  .sorting_1 {
+                    background-color: transparent;
+                  }
+                }
+
+                &.even {
+                  .sorting_1 {
+                    background-color: transparent;
+                  }
+                }
+              }
+            }
+          }
+
+          .bi-chevron-right,
+          .bi-chevron-left {
+            -webkit-text-stroke: 1px;
+          }
+
+          .no-footer {
+            border-bottom: none;
+          }
+
+          .dataTables_paginate {
+            color: rgb(4, 32, 64);
+            font-size: 14px;
+            font-weight: 500;
+            padding-top: 0;
+            padding: 0 15px 15px 15px;
+
+            .paginate_button {
+              width: 30px;
+              height: 30px;
+              padding: 0.25rem 0;
+              &.current {
+                background: rgb(23, 93, 247);
+                color: rgb(255, 255, 255) !important;
+                border-radius: 6px;
+                border: 1px solid rgb(23, 93, 247);
+              }
+              &:not(.current):hover,
+              &:not(.current):focus {
+                background: rgba(23, 94, 247, 0.438);
+                color: rgb(255, 255, 255) !important;
+                border-radius: 6px;
+                border: none;
+              }
+            }
+          }
+
+          .dataTables_info {
+            color: rgb(82, 83, 85);
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
         }
       }
     }

@@ -257,7 +257,96 @@
                     </div>
                 </div>
                 <div class="pane-table">
-                    ghgfd
+                    <table id="incomes-overdue" class="display jquery-table" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Detail</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                            <tr>
+                                <td>#SD-6598236</td>
+                                <td>Paid</td>
+                                <td>Approved</td>
+                                <td>TL 3.140,10</td>
+                                <td>...</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -292,6 +381,50 @@
         // Add slideUp animation to Bootstrap dropdown when collapsing.
         $(".dropdown").on("hide.bs.dropdown", function () {
             $(this).find(".dropdown-menu").first().stop(true, true).slideUp(250);
+        });
+
+
+        // Create main table
+        $(document).ready(function () {
+            var table = $('#incomes-overdue').DataTable({
+                select: false,
+                "searching": false,
+                "pageLength": 5,
+                "lengthChange": false,
+                "language": {
+                    "info": "Showing _START_ to _END_ of _TOTAL_ total results",
+                    paginate: {
+                        next: '<i class="bi bi-chevron-right"></i>',
+                        previous: '<i class="bi bi-chevron-left"></i>'
+                    }
+                },
+                "columnDefs": [{
+                        className: "detail",
+                        "targets": 0,
+                        "width": "40%"
+                    },
+                    {
+                        className: "date",
+                        "targets": 1,
+                        "width": "25%"
+                    },
+                    {
+                        className: "status",
+                        "targets": 2,
+                        "width": "10%"
+                    },
+                    {
+                        className: "amount",
+                        "targets": 3,
+                        "width": "20%"
+                    },
+                    {
+                        className: "action",
+                        "targets": 4,
+                        "width": "5%"
+                    }
+                ]
+            }); //End of create main table
         });
     </script>
 </div>

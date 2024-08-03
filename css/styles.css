@@ -580,12 +580,118 @@ body {
   font-size: 14px;
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table {
-  padding: 0px 15px 0px 15px;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(237, 237, 240);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  height: 500px;
+  height: 100%;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table {
+  margin-bottom: 10rem;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead {
+  font-size: 14px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th {
+  color: rgb(82, 83, 85);
+  font-size: 14px;
+  font-weight: 500;
+  border-right: 1px solid rgb(218, 218, 222);
+  border-bottom: 1px solid rgb(218, 218, 222);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th:last-child {
+  border-right: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th:last-child.sorting {
+  background-image: none !important;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th:last-child.sorting::after {
+  display: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th.status {
+  text-align: center;
+  background-image: none !important;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th.status::after {
+  display: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th.amount {
+  text-align: right;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead .sorting {
+  background-image: url(/images/soring_both.png);
+  background-size: 14px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead .sorting_asc {
+  background-image: url(/images/soring_asc.png) !important;
+  background-size: 12px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead .sorting_desc {
+  background-image: url(/images/soring_desc.png) !important;
+  background-size: 12px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody {
+  font-size: 13px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount {
+  text-align: right;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail, #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date {
+  padding-left: 15px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount {
+  padding-right: 0;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status, #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action {
+  text-align: center;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr.odd {
+  background-color: transparent;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr.odd .sorting_1 {
+  background-color: transparent;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr.even .sorting_1 {
+  background-color: transparent;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .bi-chevron-right,
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .bi-chevron-left {
+  -webkit-text-stroke: 1px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .no-footer {
+  border-bottom: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .dataTables_paginate {
+  color: rgb(4, 32, 64);
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 0;
+  padding: 0 15px 15px 15px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .dataTables_paginate .paginate_button {
+  width: 30px;
+  height: 30px;
+  padding: 0.25rem 0;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .dataTables_paginate .paginate_button.current {
+  background: rgb(23, 93, 247);
+  color: rgb(255, 255, 255) !important;
+  border-radius: 6px;
+  border: 1px solid rgb(23, 93, 247);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .dataTables_paginate .paginate_button:not(.current):hover, #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .dataTables_paginate .paginate_button:not(.current):focus {
+  background: rgba(23, 94, 247, 0.438);
+  color: rgb(255, 255, 255) !important;
+  border-radius: 6px;
+  border: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .dataTables_info {
+  color: rgb(82, 83, 85);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .general-modal .modal-header {

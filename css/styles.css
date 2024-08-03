@@ -493,6 +493,23 @@ body {
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-options .option-pills .option-pill span {
   width: max-content;
+  display: inline-flex;
+  align-items: center;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-options .option-pills .option-pill span[data-choosed]::after {
+  content: attr(data-choosed);
+  color: rgb(255, 255, 255);
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: rgb(188, 46, 27);
+  margin-left: 5px;
+  vertical-align: middle;
+  font-size: 9px;
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-options .option-pills .option-pill i {
   -webkit-text-stroke: 1px;
@@ -525,6 +542,7 @@ body {
   border-radius: 6px;
   background: rgb(255, 253, 253);
   height: 32px;
+  width: 250px;
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-search-print .pane-search .input-group-text,
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-search-print .pane-search .form-control {
@@ -633,17 +651,168 @@ body {
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody {
   font-size: 13px;
 }
-#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount {
-  text-align: right;
-}
-#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail, #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date {
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail {
+  display: flex;
+  align-items: center;
   padding-left: 15px;
 }
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 32px;
+  margin-right: 10px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail[data-type=paid]::before {
+  background: rgb(92, 184, 77);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail[data-type=pending]::before {
+  background: rgb(251, 227, 16);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail[data-type=expired]::before {
+  background: rgb(230, 90, 90);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail .detail-info .detail-title {
+  color: rgb(4, 32, 64);
+  font-size: 14px;
+  font-weight: 600;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.detail .detail-info .detail-subtitle {
+  color: rgb(79, 99, 121);
+  font-size: 13px;
+  font-weight: 500;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date {
+  padding-left: 15px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date .date-info {
+  display: flex;
+  align-items: center;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date .date-info .date-payment {
+  padding: 0 5px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 13px;
+  font-weight: 500;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date .date-info .date-text {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date .date-subitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(79, 99, 121);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date[data-type=paid] .date-payment {
+  border-color: rgb(53, 129, 17);
+  color: rgb(53, 129, 17);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date[data-type=paid] .date-text {
+  display: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date[data-type=unpaid] .date-payment {
+  border: 1px solid rgb(4, 32, 64);
+  color: rgb(4, 32, 64);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date[data-type=unpaid] .date-text {
+  display: block;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date[data-type=expired] .date-payment {
+  border: 1px solid rgb(4, 32, 64);
+  color: rgb(4, 32, 64);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.date[data-type=expired] .date-text {
+  display: block;
+  color: rgb(202, 3, 27);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status {
+  text-align: center;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status .box {
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 8px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status[data-type=approved] .box {
+  background: rgb(45, 136, 43);
+  color: rgb(241, 248, 241);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status[data-type=pending] .box {
+  background: rgb(236, 245, 254);
+  color: rgb(4, 32, 64);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status[data-type=rejected] .box {
+  background: rgb(252, 219, 219);
+  color: rgb(202, 0, 0);
+}
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount {
+  text-align: right;
   padding-right: 0;
 }
-#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.status, #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action {
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount .amount-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount .amount-info .type {
+  color: rgba(4, 32, 64, 0.85);
+  font-size: 12px;
+  font-weight: 500;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount .amount-info .amount {
+  color: rgb(4, 32, 64);
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.amount .amount-subtite {
+  color: rgb(79, 99, 121);
+  font-size: 11px;
+  font-weight: 500;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action {
   text-align: center;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action .dots {
+  width: fit-content;
+  margin: auto;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action .dots .dropdown-toggle {
+  border-radius: 50px;
+  background: rgb(246, 246, 249);
+  padding: 2px;
+  width: 28px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgb(41, 41, 41);
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action .dots .dropdown-toggle::after {
+  display: none;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action .dropdown-menu {
+  left: unset !important;
+  right: 0 !important;
+  font-size: 13px;
+}
+#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr td.action .dropdown-menu .dropdown-item {
+  color: rgb(41, 41, 41);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table tbody tr.odd {
   background-color: transparent;

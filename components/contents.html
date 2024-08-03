@@ -169,12 +169,40 @@
                                         stroke-linejoin="round" />
                                     <g opacity="0.000000" />
                                 </svg>
-                                <span class="ms-2">Filter</span>
+                                <span class="ms-2 filter-spn" data-choosed="1">Filter</span>
                             </a>
-                            <ul class="dropdown-menu mt-1">
-                                <li><a class="dropdown-item" href="#">By Amount</a></li>
-                                <li><a class="dropdown-item" href="#">By Client </a></li>
-                                <li><a class="dropdown-item" href="#">By Invoice Number </a></li>
+                            <ul class="dropdown-menu filter-lists mt-1">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="byAmount">
+                                            <label class="form-check-label" for="byAmount">
+                                                By Amount
+                                            </label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="byClient">
+                                            <label class="form-check-label" for="byClient">
+                                                By Client
+                                            </label>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="byInvoiceNumber" checked>
+                                            <label class="form-check-label" for="byInvoiceNumber">
+                                                By Invoice Number
+                                            </label>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div class="dropdown option-pills">
@@ -268,82 +296,1010 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!--- first 5 row --->
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="paid">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-6598236</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="paid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Paid</div>
+                                        <div class="date-text">overdue</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">TL</div>
+                                        <div class="amount">3.140,10</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 0,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-4345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 43 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">8.100,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 500,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="pending">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-6568954</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="unpaid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text"> In 50 Days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="pending">
+                                    <div class="box">Draft</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">10.250,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 10.250,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-4345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 3 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Rejected</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">2.540,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 2.540,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-4345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 3 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Canceled</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">140,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 140,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--- second 5 row --->
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-4347468</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 7 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Canceled</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">7.450,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 7.450,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="pending">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-3568954</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="unpaid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text"> In 33 Days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="pending">
+                                    <div class="box">Draft</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">17.250,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 17.250,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="paid">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-5598236</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="paid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Paid</div>
+                                        <div class="date-text"></div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">TL</div>
+                                        <div class="amount">5.150,10</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 230,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-2348459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 16 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Rejected</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">23.340,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 240,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-9345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 93 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">9.100,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 9.100,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--- third 5 row --->
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-4345468</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 5 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Canceled</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">1.450,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 1.450,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-4348459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 4 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Rejected</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">5.340,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 5.340,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <td>#SD-6598236</td>
-                                <td>Paid</td>
-                                <td>Approved</td>
-                                <td>TL 3.140,10</td>
-                                <td>...</td>
+                                <td class="detail-row" data-type="pending">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-7568954</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="unpaid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text"> In 35 Days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="pending">
+                                    <div class="box">Draft</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">3.250,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 3.250,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-5345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 63 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">24.100,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 24.100,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="paid">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-1598236</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="paid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Paid</div>
+                                        <div class="date-text"></div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">TL</div>
+                                        <div class="amount">8.150,10</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 30,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--- fourth 5 row --->
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-1748459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 17 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Rejected</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">740,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 740,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-2345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 18 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">2.500,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 2.500,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-3345468</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text">Overdue by 25 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="rejected">
+                                    <div class="box">Canceled</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">EUR</div>
+                                        <div class="amount">2.450,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 2.450,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-5345459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 42 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">7.100,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 7.100,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="paid">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-5798236</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="paid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Paid</div>
+                                        <div class="date-text"></div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">TL</div>
+                                        <div class="amount">1.150,10</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 330,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!--- fifth 5 row --->
+                            <tr>
+                                <td class="detail-row" data-type="pending">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-7868954</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="unpaid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text"> In 85 Days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="pending">
+                                    <div class="box">Draft</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">250,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 250,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-5349959</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 17 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">8.100,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 8.100,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="expired">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-5665459</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="expired">
+                                    <div class="date-info">
+                                        <div class="date-payment">Partially Paid</div>
+                                        <div class="date-text">Overdue by 22 days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="approved">
+                                    <div class="box">Approved</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">1.100,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 1.100,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="pending">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-3338954</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="unpaid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text"> In 13 Days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="pending">
+                                    <div class="box">Draft</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">13.250,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 13.250,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="detail-row" data-type="pending">
+                                    <div class="detail-info">
+                                        <div class="detail-title">#SD-6969954</div>
+                                        <div class="detail-subtitle">Invoice Date: 12/01/2023</div>
+                                    </div>
+                                </td>
+                                <td class="date-row" data-type="unpaid">
+                                    <div class="date-info">
+                                        <div class="date-payment">Unpaid</div>
+                                        <div class="date-text"> In 29 Days</div>
+                                    </div>
+                                    <div class="date-subitle">Due Date: 12/01/2023</div>
+                                </td>
+                                <td class="status" data-type="pending">
+                                    <div class="box">Draft</div>
+                                </td>
+                                <td class="amount-box">
+                                    <div class="amount-info">
+                                        <div class="type">USD</div>
+                                        <div class="amount">9.250,00</div>
+                                    </div>
+                                    <div class="amount-subtite">Outstanding: 9.250,00</div>
+                                </td>
+                                <td>
+                                    <div class="dropdown dots">
+                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </a>
+                                        <ul class="dropdown-menu mt-1">
+                                            <li><a class="dropdown-item" href="#">Edit<i
+                                                        class="bi bi-pencil-square ms-2 text-warning"></i></a></li>
+                                            <li><a class="dropdown-item" href="#">Delete<i
+                                                        class="bi bi-trash3 ms-2 text-danger"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -372,6 +1328,8 @@
     <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab">reports</div>
 
 
+
+
     <script>
         // Add slideDown animation to Bootstrap dropdown when expanding.
         $(".tab-content .dropdown").on("show.bs.dropdown", function () {
@@ -383,11 +1341,27 @@
             $(this).find(".dropdown-menu").first().stop(true, true).slideUp(250);
         });
 
+        /*****************************************************************************************************************************************/
+
+        // Filter Checkboxes
+        function updateChoosedCount() {
+            var selectedCount = $('.filter-lists .form-check-input:checked').length;
+            $('.option-pill .filter-spn').attr('data-choosed', selectedCount);
+        }
+
+        $('.filter-lists .form-check-input').on('change', function () {
+            updateChoosedCount();
+        });
+        // Initial update
+        updateChoosedCount();
+
+        /*****************************************************************************************************************************************/
 
         // Create main table
         $(document).ready(function () {
             var table = $('#incomes-overdue').DataTable({
                 select: false,
+                "order": [],
                 "searching": false,
                 "pageLength": 5,
                 "lengthChange": false,
@@ -401,27 +1375,29 @@
                 "columnDefs": [{
                         className: "detail",
                         "targets": 0,
-                        "width": "40%"
+                        "width": "50%"
                     },
                     {
                         className: "date",
                         "targets": 1,
-                        "width": "25%"
+                        "width": "20%"
                     },
                     {
                         className: "status",
                         "targets": 2,
-                        "width": "10%"
+                        "width": "10%",
+                        orderable: false
                     },
                     {
                         className: "amount",
                         "targets": 3,
-                        "width": "20%"
+                        "width": "15%"
                     },
                     {
                         className: "action",
                         "targets": 4,
-                        "width": "5%"
+                        "width": "5%",
+                        orderable: false
                     }
                 ]
             }); //End of create main table

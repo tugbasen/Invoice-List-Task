@@ -18,6 +18,11 @@
 body {
   font-family: Inter, sans-serif;
   height: 100vh;
+  overflow-x: hidden;
+
+  @media (max-width: 599px) {
+    background-color: rgb(245, 245, 245);
+  }
 }
 
 // Sidebar
@@ -35,6 +40,21 @@ body {
   &.active {
     transform: translateX(-230px);
     transition: all 0.3s ease-out;
+  }
+
+  @media (max-width: 599px) {
+    position: absolute;
+    width: 100%;
+    transform: translateX(-95%);
+    transition: all 0.3s ease-out;
+    z-index: 2;
+    height: auto;
+
+    &.active {
+      transform: translateX(0%);
+      transition: all 0.3s ease-out;
+      width: 80%;
+    }
   }
 
   .logo {
@@ -71,6 +91,16 @@ body {
         transform: rotate(180deg);
         transition: all 0.3s ease-in-out;
       }
+
+      @media (max-width: 599px) {
+        width: 35px;
+        height: 35px;
+        right: -18px;
+
+        svg {
+          transform: scale(1.5);
+        }
+      }
     }
   }
 
@@ -82,6 +112,7 @@ body {
     overflow-y: auto;
     flex-direction: column;
     flex-wrap: nowrap;
+    border-bottom: none;
 
     .menu-item {
       padding: 10px 12px 0px 12px;
@@ -124,14 +155,24 @@ body {
 }
 
 .page-container {
+  overflow-y: hidden;
   margin-left: 270px;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
-  background-color: rgb(150, 30, 30);
 
   &.w-wider {
     margin-left: 40px;
     transition: all 0.3s ease-out;
+  }
+
+  @media (max-width: 599px) {
+    width: 100%;
+    margin-left: 2%;
+    transition: all 0.3s ease-out;
+
+    &.w-wider {
+      margin-left: 2%;
+    }
   }
 }
 
@@ -155,6 +196,8 @@ body {
       outline: none;
       width: 108px;
       height: 34px;
+      position: relative;
+      z-index: 1;
 
       span {
         font-size: 16px;
@@ -164,16 +207,109 @@ body {
         color: rgb(255, 255, 255);
       }
     }
+
+    @media (max-width: 599px) {
+      width: 100%;
+      text-align: center;
+    }
   }
   .right-content {
     position: relative;
     height: 54px;
     width: auto;
 
+    @media (max-width: 599px) {
+      position: absolute;
+      right: 0;
+      width: 100%;
+    }
+
     .navbar {
       position: absolute;
       right: 0;
       top: 0;
+
+      .navbar-collapse {
+        z-index: 1;
+
+        .nav-item {
+          .nav-link {
+            .mobile-text {
+              display: none;
+
+              @media (max-width: 991px) {
+                display: block;
+                margin-right: 1rem;
+                font-size: 13px;
+                font-weight: 500;
+                color: rgb(255, 255, 255);
+              }
+            }
+
+            @media (max-width: 991px) {
+              .svg-box {
+                width: 40px;
+                height: 40px;
+
+                svg {
+                  width: 15px;
+                }
+
+                .alarm-info {
+                  width: 15px;
+                  height: 15px;
+                  font-size: 10px;
+                  right: 5px;
+                  top: 2px;
+                }
+              }
+            }
+          }
+
+          @media (max-width: 991px) {
+            &.account-detail {
+              .account-info,
+              svg {
+                display: none;
+              }
+              .account-img {
+                width: 25px;
+                height: 25px;
+                font-size: 10px;
+              }
+            }
+
+            .dropdown-menu {
+              display: none !important;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 599px) {
+        width: 100%;
+
+        .navbar-collapse {
+          padding-left: 10%;
+        }
+      }
+
+      .navbar-toggler {
+        padding: 0 5px;
+        margin-top: 3px;
+        &:focus {
+          box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+          width: 20px;
+          height: 32px;
+        }
+
+        @media (max-width: 599px) {
+          margin-right: 1rem;
+        }
+      }
     }
 
     .nav-item {
@@ -291,9 +427,20 @@ body {
     @media (max-width: 991px) {
       .navbar-collapse {
         .navbar-nav {
-          background: rgb(225 225 225);
+          background: rgb(4, 32, 64);
           border-radius: 3px;
           margin-top: 5px;
+          padding-right: 5px;
+
+          .nav-item {
+            .nav-link {
+              .svg-box {
+                svg path {
+                  stroke: rgb(255, 255, 255);
+                }
+              }
+            }
+          }
         }
       }
 
@@ -396,9 +543,13 @@ body {
 }
 
 #contents {
-  height: 100vh;
+  height: 100%;
   background-color: rgb(245, 245, 245);
-  padding: 0px 25px 0px 25px;
+  padding: 0px 25px 25px 25px;
+
+  @media (min-width: 1850px) {
+    height: 100vh;
+  }
 
   .tab-content {
     .tab-header {
@@ -506,6 +657,30 @@ body {
       border: 1px solid rgb(237, 237, 240);
       border-bottom: none;
 
+      @media (max-width: 489px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 991px) {
+        height: auto;
+
+        .nav-link {
+          padding: 0.5rem 0.75rem;
+        }
+        .dots {
+          padding: 0.5rem !important;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 991px) {
+        .dots {
+          .dropdown-menu {
+            left: unset !important;
+            right: 0 !important;
+          }
+        }
+      }
+
       .nav-link {
         color: rgba(41, 41, 41, 0.8);
         font-size: 15px;
@@ -553,6 +728,36 @@ body {
           display: flex;
           align-items: center;
           justify-content: space-between;
+
+          @media (max-width: 991px) {
+            height: auto;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+
+            .pane-options {
+              justify-content: flex-start !important;
+              flex-wrap: wrap;
+
+              .option-pills {
+                margin-bottom: 0.5rem;
+              }
+            }
+
+            .pane-search-print {
+              justify-content: space-between !important;
+              column-gap: unset !important;
+              width: 100%;
+            }
+          }
+
+          @media (min-width: 992px) and (max-width: 1299px) {
+            flex-direction: column;
+            height: auto;
+
+            .pane-search-print {
+              margin-top: 0.75rem;
+            }
+          }
 
           .pane-options {
             display: flex;
@@ -716,6 +921,10 @@ body {
           .jquery-table {
             margin-bottom: 10rem;
 
+            @media (max-width: 991px) {
+              margin-bottom: 2rem;
+            }
+
             thead {
               font-size: 14px;
               tr {
@@ -838,7 +1047,7 @@ body {
                       }
                     }
 
-                    .date-subitle {
+                    .date-subtitle {
                       font-size: 13px;
                       font-weight: 500;
                       color: rgb(79, 99, 121);
@@ -933,11 +1142,18 @@ body {
                       }
                     }
 
-                    .amount-subtite {
+                    .amount-subtitle {
                       color: rgb(79, 99, 121);
                       font-size: 11px;
                       font-weight: 500;
                     }
+                  }
+
+                  &.detail,
+                  &.date,
+                  &.status,
+                  &.amount {
+                    text-wrap: nowrap;
                   }
 
                   &.action {
@@ -1010,6 +1226,11 @@ body {
             padding-top: 0;
             padding: 0 15px 15px 15px;
 
+            @media (max-width: 991px) {
+              width: 100%;
+              text-align: center;
+            }
+
             .paginate_button {
               width: 30px;
               height: 30px;
@@ -1037,6 +1258,12 @@ body {
             line-height: 100%;
             padding-left: 15px;
             padding-right: 15px;
+
+            @media (max-width: 991px) {
+              width: 100%;
+              text-align: center;
+              margin-bottom: 1rem;
+            }
           }
         }
       }
@@ -1058,3 +1285,17 @@ body {
     font-size: 14px;
   }
 }
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+// .index-wrapper {
+//   display: flex;
+
+//   #sidebar-container,
+//   .page-container {
+//     flex: 1;
+//     height: 100%;
+//   }
+// }

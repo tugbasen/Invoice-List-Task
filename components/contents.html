@@ -84,15 +84,33 @@
                     </svg>
                 </a>
                 <ul class="dropdown-menu mt-1">
-                    <li><a class="dropdown-item" href="#">Drafts</a></li>
-                    <li><a class="dropdown-item" href="#">Cancelled </a></li>
-                    <li><a class="dropdown-item" href="#">Archived </a></li>
+                    <li>
+                        <a class="dropdown-item nav-link" id="drafts-tab" data-bs-toggle="tab" data-bs-target="#drafts"
+                            type="button" role="tab" aria-controls="drafts" aria-selected="false">
+                            Drafts
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item nav-link" id="cancelled-tab" data-bs-toggle="tab"
+                            data-bs-target="#cancelled" type="button" role="tab" aria-controls="cancelled"
+                            aria-selected="false">
+                            Cancelled
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item nav-link" id="archived-tab" data-bs-toggle="tab"
+                            data-bs-target="#archived" type="button" role="tab" aria-controls="archived"
+                            aria-selected="false">
+                            Archived
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="tab-content tab-table-tabs-contents" id="myTabContent2">
             <div class="tab-pane fade" id="all-invoice" role="tabpanel" aria-labelledby="all-invoice-tab">
-                all invoices
+                <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for <span>All
+                        Invoice</span> content</div>
             </div>
             <div class="tab-pane fade show active" id="overdue" role="tabpanel" aria-labelledby="overdue-tab">
                 <div class="pane-header">
@@ -1258,24 +1276,351 @@
 
 
 
-            <div class="tab-pane fade" id="progress" role="tabpanel" aria-labelledby="progress-tab">progress</div>
-            <div class="tab-pane fade" id="waiting" role="tabpanel" aria-labelledby="waiting-tab">waiting</div>
+            <div class="tab-pane fade" id="progress" role="tabpanel" aria-labelledby="progress-tab">
+                <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+                    <span>Progress</span> content</div>
+            </div>
+            <div class="tab-pane fade" id="waiting" role="tabpanel" aria-labelledby="waiting-tab">
+                <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+                    <span>Waiting</span> content</div>
+            </div>
+            <div class="tab-pane fade" id="drafts" role="tabpanel" aria-labelledby="drafts-tab">
+                <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+                    <span>Drafts</span> content</div>
+            </div>
+            <div class="tab-pane fade" id="cancelled" role="tabpanel" aria-labelledby="cancelled-tab">
+                <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+                    <span>Cancelled</span> content</div>
+            </div>
+            <div class="tab-pane fade" id="archived" role="tabpanel" aria-labelledby="archived-tab">
+                <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+                    <span>Archived</span> content</div>
+            </div>
         </div>
     </div>
 
-    <div class="tab-pane fade" id="invoices" role="tabpanel" aria-labelledby="invoices-tab">invoices</div>
-    <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">dashboard
+
+
+    <!--- Other Tabs --->
+    <div class="tab-pane fade" id="invoices" role="tabpanel" aria-labelledby="invoices-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M22 8.41C22 10 21 11 19.42 11L16 11L16 4.01C16 2.89 16.91 2 18.02 2C19.11 2.01 20.11 2.45 20.83 3.16C21.55 3.89 22 4.89 22 6L22 8.41Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                    d="M2 21C2 21.83 2.94 22.3 3.59 21.8L5.31 20.52C5.71 20.21 6.27 20.26 6.63 20.62L8.28 22.29C8.67 22.68 9.32 22.68 9.71 22.29L11.39 20.61C11.74 20.26 12.3 20.21 12.69 20.52L14.4 21.8C15.06 22.29 16 21.82 16 21L16 4C16 2.89 16.9 2 18 2L7 2L6 2C3 2 2 3.79 2 6L2 7L2 21Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <g opacity="0.4">
+                    <path d="M6.25 10L11.75 10" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                        stroke-linecap="round" />
+                    <path d="M9 12.75L9 7.25" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                        stroke-linecap="round" />
+                </g>
+            </svg>
+            <div class="title-info">
+                <div class="title">Invoices</div>
+                <div class="subtitle">Invoices Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Invoices</span> content</div>
     </div>
-    <div class="tab-pane fade" id="customers" role="tabpanel" aria-labelledby="customers-tab">customers</div>
-    <div class="tab-pane fade" id="bills" role="tabpanel" aria-labelledby="bills-tab">bills</div>
-    <div class="tab-pane fade" id="expenses" role="tabpanel" aria-labelledby="expenses-tab">expenses</div>
-    <div class="tab-pane fade" id="vendors" role="tabpanel" aria-labelledby="vendors-tab">vendors</div>
-    <div class="tab-pane fade" id="cashbank" role="tabpanel" aria-labelledby="cashbank-tab">cashbank</div>
-    <div class="tab-pane fade" id="cashflow" role="tabpanel" aria-labelledby="cashflow-tab">cashflow</div>
-    <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">products</div>
-    <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">transactions</div>
-    <div class="tab-pane fade" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">accounts</div>
-    <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab">reports</div>
+    <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12.02 13.97C10.75 15.65 10 17.74 10 20C10 25.52 14.48 30 20 30C25.52 30 30 25.52 30 20C30 14.48 25.52 10 20 10"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+                <g opacity="0.6">
+                    <path d="M13 20C13 23.87 16.12 27 20 27C23.87 27 27 23.87 27 20C27 16.12 23.87 13 20 13"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+                </g>
+                <g opacity="0.6">
+                    <path d="M20 24C22.21 24 24 22.21 24 20C24 17.79 22.21 16 20 16" stroke="#FFFFFF" stroke-width="1.5"
+                        stroke-linejoin="round" stroke-linecap="round" />
+                </g>
+            </svg>
+            <div class="title-info">
+                <div class="title">Dashboard</div>
+                <div class="subtitle">Dashboard Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Dashboard</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="customers" role="tabpanel" aria-labelledby="customers-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="clip2_71">
+                        <rect rx="19.5" width="39" height="39" transform="translate(0.5 0.5)" fill="white" />
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#clip2_71)">
+                    <path
+                        d="M12.99 30C10.99 30 9.99 29 9.99 27V19C9.99 17 10.99 16 12.99 16H17.99V27C17.99 29 18.99 30 20.99 30H12.99Z"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                    <g opacity="0.5">
+                        <path
+                            d="M17.99 12.99V15.99H12.99V13.99C12.99 12.89 13.89 11.99 14.99 11.99H18.1C18.02 12.29 17.99 12.62 17.99 12.99Z"
+                            stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                    </g>
+                    <g opacity="0.5">
+                        <path d="M21.99 16V21" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </g>
+                    <g opacity="0.5">
+                        <path d="M26 16V21" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </g>
+                    <path d="M22.99 25C22.44 25 21.99 25.45 21.99 26V30H25.99V26C25.99 25.45 25.54 25 24.99 25H22.99Z"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                    <g opacity="0.5">
+                        <path d="M14 20.99V24.99" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </g>
+                    <path
+                        d="M18 13C18 11 19 10 21 10H27C29 10 30 11 30 13V27C30 29 29 30 27 30H21C19 30 18 29 18 27V13Z"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                </g>
+            </svg>
+            <div class="title-info">
+                <div class="title">Customers</div>
+                <div class="subtitle">Customers Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Customers</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="bills" role="tabpanel" aria-labelledby="bills-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="clip2_85">
+                        <rect rx="-0.5" width="39" height="39" transform="translate(0.5 0.5)" fill="white" />
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#clip2_85)">
+                    <path
+                        d="M30 16.42C30 18 29 19 27.42 19H24V12.01C24 10.9 24.91 10 26.02 10C27.11 10.01 28.11 10.45 28.83 11.17C29.55 11.9 30 12.9 30 14V16.42Z"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                    <path
+                        d="M10 29C10 29.83 10.94 30.3 11.6 29.8L13.31 28.52C13.71 28.22 14.27 28.26 14.63 28.62L16.29 30.29C16.68 30.68 17.32 30.68 17.7 30.29L19.39 28.61C19.74 28.26 20.29 28.22 20.69 28.52L22.4 29.8C23.06 30.29 24 29.82 24 29V12C24 10.9 24.9 10 26 10H14C11 10 10 11.79 10 14V29Z"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                    <g opacity="0.4">
+                        <path d="M14.25 18H19.75" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </g>
+                </g>
+            </svg>
+            <div class="title-info">
+                <div class="title">Bills</div>
+                <div class="subtitle">Bills Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Bills</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="expenses" role="tabpanel" aria-labelledby="expenses-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="clip2_94">
+                        <rect rx="-0.5" width="39" height="39" transform="translate(0.5 0.5)" fill="white" />
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#clip2_94)">
+                    <path
+                        d="M28.5 19.29V15.04C28.5 11.01 27.56 10 23.78 10H16.21C12.44 10 11.5 11.01 11.5 15.04V26.3C11.5 28.96 12.96 29.59 14.73 27.69L14.74 27.68C15.56 26.81 16.81 26.88 17.52 27.83L18.53 29.18"
+                        stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+                    <path d="M26 29.5V23.5L28 25.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                        stroke-linecap="round" />
+                    <path d="M26 23.5L24 25.5" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                        stroke-linecap="round" />
+                    <g opacity="0.5">
+                        <path d="M16 15H24" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                        <path d="M17 19H23" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                            stroke-linecap="round" />
+                    </g>
+                </g>
+            </svg>
+            <div class="title-info">
+                <div class="title">Expenses</div>
+                <div class="subtitle">Expenses Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Expenses</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="vendors" role="tabpanel" aria-labelledby="vendors-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect rx="19.5" width="39" height="39" transform="translate(0.5 0.5)" fill="#FF6036" fill-opacity="0" />
+                <path
+                    d="M12.99 30C10.99 30 9.99 29 9.99 27L9.99 19C9.99 17 10.99 16 12.99 16L17.99 16L17.99 27C17.99 29 18.99 30 20.99 30L12.99 30Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                    d="M17.99 12.99L17.99 15.99L12.99 15.99L12.99 13.99C12.99 12.89 13.89 11.99 14.99 11.99L18.1 11.99C18.02 12.29 17.99 12.62 17.99 12.99Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" opacity="0.5" />
+                <path d="M21.99 16L21.99 21" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.5" />
+                <path d="M26 16L26 21" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.5" />
+                <path
+                    d="M22.99 25C22.44 25 21.99 25.45 21.99 26L21.99 30L25.99 30L25.99 26C25.99 25.45 25.54 25 24.99 25L22.99 25Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M14 20.99L14 24.99" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.5" />
+                <path
+                    d="M18 13C18 11 19 10 21 10L27 10C29 10 30 11 30 13L30 27C30 29 29 30 27 30L21 30C19 30 18 29 18 27L18 13Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+            <div class="title-info">
+                <div class="title">Vendors</div>
+                <div class="subtitle">Vendors Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Vendors</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="cashbank" role="tabpanel" aria-labelledby="cashbank-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M29.37 13.75C29.72 13.89 30 14.31 30 14.68L30 18C30 18.54 29.55 19 29 19L11 19C10.45 19 10 18.54 10 18L10 14.68C10 14.31 10.28 13.89 10.63 13.75L19.62 10.14C19.83 10.07 20.17 10.07 20.37 10.14L29.37 13.75Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M10 30L10 27C10 26.45 10.45 26 11 26L29 26C29.55 26 30 26.45 30 27L30 30L10 30Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path d="M12 26L12 19" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.4" />
+                <path d="M16 26L16 19" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.4" />
+                <path d="M20 26L20 19" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.4" />
+                <path d="M24 26L24 19" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.4" />
+                <path d="M28 26L28 19" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" opacity="0.4" />
+                <path d="M9 30L31 30" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" />
+                <path
+                    d="M20 16.5C19.17 16.5 18.5 15.82 18.5 15C18.5 14.17 19.17 13.5 20 13.5C20.82 13.5 21.5 14.17 21.5 15C21.5 15.82 20.82 16.5 20 16.5Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" opacity="0.4" />
+            </svg>
+            <div class="title-info">
+                <div class="title">Cash & Banks</div>
+                <div class="subtitle">Cash & Banks Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Cash & Banks</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="cashflow" role="tabpanel" aria-labelledby="cashflow-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20.63 10.58L17.73 17.31L14.88 17.31C14.2 17.31 13.55 17.45 12.96 17.7L14.71 13.52L14.75 13.42L14.82 13.26C14.84 13.2 14.86 13.14 14.89 13.09C16.2 10.06 17.68 9.37 20.66 10.51L20.63 10.58Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                    d="M24.64 17.31L17.73 17.31L20.63 10.58L20.66 10.51C20.81 10.56 20.95 10.63 21.1 10.69L23.31 11.62C24.54 12.13 25.4 12.66 25.92 13.3C26.02 13.42 26.1 13.53 26.17 13.66C26.26 13.8 26.33 13.94 26.37 14.09C26.41 14.18 26.44 14.27 26.46 14.35C26.73 15.19 26.57 16.22 26.05 17.51C25.6 17.37 25.12 17.31 24.64 17.31Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                    d="M29.52 24.14C29.52 24.34 29.51 24.54 29.5 24.74C29.31 28.23 27.36 29.99 23.66 29.99L15.86 29.99C15.62 29.99 15.38 29.97 15.15 29.94C11.97 29.73 10.27 28.03 10.06 24.85C10.03 24.62 10.01 24.38 10.01 24.14L10.01 22.19C10.01 20.18 11.23 18.45 12.97 17.7C13.57 17.45 14.21 17.31 14.89 17.31L24.65 17.31C25.14 17.31 25.62 17.38 26.06 17.51C28.05 18.12 29.52 19.98 29.52 22.19L29.52 24.14Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                    d="M12.96 17.7C11.22 18.45 10 20.18 10 22.19L10 19.26C10 16.42 12.02 14.05 14.71 13.52L12.96 17.7Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" opacity="0.4" />
+                <path
+                    d="M29.51 22.19C29.51 19.99 28.05 18.12 26.05 17.52C26.57 16.22 26.72 15.2 26.47 14.35C26.45 14.26 26.42 14.17 26.38 14.09C28.24 15.05 29.51 17.02 29.51 19.26L29.51 22.19Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" opacity="0.4" />
+            </svg>
+            <div class="title-info">
+                <div class="title">Cash Flow</div>
+                <div class="subtitle">Cash Flow Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Cash Flow</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.69 27.83C18.55 29.69 21.57 29.69 23.44 27.83L27.83 23.44C29.69 21.58 29.69 18.56 27.83 16.69L23.29 12.17C22.34 11.22 21.03 10.71 19.69 10.78L14.69 11.02C12.69 11.11 11.1 12.7 11 14.69L10.76 19.69C10.7 21.04 11.21 22.35 12.16 23.3L16.69 27.83Z"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+                <path
+                    d="M17.49 20C16.11 20 14.99 18.88 14.99 17.5C14.99 16.11 16.11 15 17.49 15C18.88 15 19.99 16.11 19.99 17.5C19.99 18.88 18.88 20 17.49 20Z"
+                    stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" />
+            </svg>
+            <div class="title-info">
+                <div class="title">Products & Services</div>
+                <div class="subtitle">Products & Services Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Products & Services</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M28.5 19.29L28.5 15.04C28.5 11.01 27.56 10 23.78 10L16.21 10C12.44 10 11.5 11.01 11.5 15.04L11.5 26.3C11.5 28.96 12.96 29.59 14.73 27.69L14.74 27.68C15.56 26.81 16.81 26.88 17.52 27.83L18.53 29.18"
+                    stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" />
+                <path
+                    d="M26.2 29.4C24.43 29.4 23 27.96 23 26.2C23 24.43 24.43 23 26.2 23C27.96 23 29.4 24.43 29.4 26.2C29.4 27.96 27.96 29.4 26.2 29.4Z"
+                    stroke="#FFFFFF" stroke-width="1.5" />
+                <path d="M30 30L29 29" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"
+                    stroke-linecap="round" />
+                <path d="M16 15L24 15" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" />
+                <path d="M17 19L23 19" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" />
+            </svg>
+            <div class="title-info">
+                <div class="title">Transactions</div>
+                <div class="subtitle">Transactions Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Transactions</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="accounts" role="tabpanel" aria-labelledby="accounts-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M23 30C28 30 30 28 30 23L30 17C30 12 28 10 23 10L17 10C12 10 10 12 10 17L10 23C10 28 12 30 17 30L23 30Z"
+                    stroke="#FFFFFF" stroke-width="1.5" />
+                <path d="M23.75 17L16.25 17" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" stroke-linejoin="round"
+                    stroke-linecap="round" />
+                <path d="M23.75 23L16.25 23" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" stroke-linejoin="round"
+                    stroke-linecap="round" />
+            </svg>
+            <div class="title-info">
+                <div class="title">Chart of Accounts</div>
+                <div class="subtitle">Chart of Accounts Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>Chart of Accounts</span> content</div>
+    </div>
+    <div class="tab-pane fade" id="reports" role="tabpanel" aria-labelledby="reports-tab">
+        <div class="tab-header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M22.97 30C27.97 30 29.97 28 29.97 23L29.97 17C29.97 12 27.97 10 22.97 10L16.96 10C11.97 10 9.96 12 9.96 17L9.96 23C9.96 28 11.97 30 16.96 30L22.97 30Z"
+                    stroke="#FFFFFF" stroke-width="1.5" />
+                <path
+                    d="M9.96 20.7L15.97 20.68C16.71 20.68 17.56 21.25 17.84 21.95L18.98 24.83C19.24 25.48 19.65 25.48 19.91 24.83L22.2 19.02C22.42 18.45 22.83 18.44 23.11 18.96L24.15 20.94C24.46 21.53 25.25 22.01 25.92 22.01L29.98 22.01"
+                    stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" stroke-linejoin="round" stroke-linecap="round" />
+            </svg>
+            <div class="title-info">
+                <div class="title">All Reports</div>
+                <div class="subtitle">All Reports Tab Content</div>
+            </div>
+        </div>
+        <div class="other-tabs"><i class="bi bi-bookmarks-fill"></i> This page is reserved for
+            <span>All Reports</span> content</div>
+    </div>
 
 
 

@@ -614,6 +614,10 @@ body {
   font-size: 15px;
   font-weight: 600;
 }
+#contents .tab-content .tab-table-tabs .dots .dropdown-item.active {
+  color: rgb(13, 101, 216);
+  border-bottom: none;
+}
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header {
   display: flex;
   justify-content: space-between;
@@ -642,7 +646,7 @@ body {
   }
   #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-search-print {
     justify-content: space-between !important;
-    column-gap: unset !important;
+    column-gap: 0.5rem !important;
     width: 100%;
   }
 }
@@ -714,6 +718,12 @@ body {
   color: rgb(41, 41, 41);
   font-size: 14px;
   font-weight: 500;
+}
+@media (max-width: 1100px) {
+  #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-options .option-pills:last-child .dropdown-menu {
+    left: unset !important;
+    right: -35px !important;
+  }
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-header .pane-search-print {
   display: flex;
@@ -807,9 +817,6 @@ body {
   border-right: 1px solid rgb(218, 218, 222);
   border-bottom: 1px solid rgb(218, 218, 222);
 }
-#contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th:last-child {
-  border-right: none;
-}
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead tr th:last-child.sorting {
   background-image: none !important;
 }
@@ -827,7 +834,7 @@ body {
   text-align: right;
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead .sorting {
-  background-image: url(/images/soring_both.png);
+  background-image: url(/images/soring_both.png) !important;
   background-size: 14px;
 }
 #contents .tab-content .tab-table-tabs-contents .tab-pane .pane-table .jquery-table thead .sorting_asc {
@@ -1068,6 +1075,49 @@ body {
     margin-bottom: 1rem;
   }
 }
+#contents .tab-content .tab-pane#invoices .tab-header, #contents .tab-content .tab-pane#dashboard .tab-header, #contents .tab-content .tab-pane#customers .tab-header, #contents .tab-content .tab-pane#bills .tab-header, #contents .tab-content .tab-pane#expenses .tab-header, #contents .tab-content .tab-pane#vendors .tab-header, #contents .tab-content .tab-pane#cashbank .tab-header, #contents .tab-content .tab-pane#cashflow .tab-header, #contents .tab-content .tab-pane#products .tab-header, #contents .tab-content .tab-pane#transactions .tab-header, #contents .tab-content .tab-pane#accounts .tab-header, #contents .tab-content .tab-pane#reports .tab-header {
+  display: flex;
+  height: 98px;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid rgba(41, 41, 41, 0.3);
+}
+#contents .tab-content .tab-pane#invoices .tab-header .title-info, #contents .tab-content .tab-pane#dashboard .tab-header .title-info, #contents .tab-content .tab-pane#customers .tab-header .title-info, #contents .tab-content .tab-pane#bills .tab-header .title-info, #contents .tab-content .tab-pane#expenses .tab-header .title-info, #contents .tab-content .tab-pane#vendors .tab-header .title-info, #contents .tab-content .tab-pane#cashbank .tab-header .title-info, #contents .tab-content .tab-pane#cashflow .tab-header .title-info, #contents .tab-content .tab-pane#products .tab-header .title-info, #contents .tab-content .tab-pane#transactions .tab-header .title-info, #contents .tab-content .tab-pane#accounts .tab-header .title-info, #contents .tab-content .tab-pane#reports .tab-header .title-info {
+  margin-left: 5px;
+}
+#contents .tab-content .tab-pane#invoices .tab-header .title-info .title, #contents .tab-content .tab-pane#dashboard .tab-header .title-info .title, #contents .tab-content .tab-pane#customers .tab-header .title-info .title, #contents .tab-content .tab-pane#bills .tab-header .title-info .title, #contents .tab-content .tab-pane#expenses .tab-header .title-info .title, #contents .tab-content .tab-pane#vendors .tab-header .title-info .title, #contents .tab-content .tab-pane#cashbank .tab-header .title-info .title, #contents .tab-content .tab-pane#cashflow .tab-header .title-info .title, #contents .tab-content .tab-pane#products .tab-header .title-info .title, #contents .tab-content .tab-pane#transactions .tab-header .title-info .title, #contents .tab-content .tab-pane#accounts .tab-header .title-info .title, #contents .tab-content .tab-pane#reports .tab-header .title-info .title {
+  color: rgb(3, 32, 64);
+  font-size: 26px;
+  font-weight: 600;
+}
+#contents .tab-content .tab-pane#invoices .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#dashboard .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#customers .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#bills .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#expenses .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#vendors .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#cashbank .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#cashflow .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#products .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#transactions .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#accounts .tab-header .title-info .subtitle, #contents .tab-content .tab-pane#reports .tab-header .title-info .subtitle {
+  color: rgb(150, 150, 150);
+  font-size: 12px;
+  font-weight: 500;
+}
+#contents .tab-content .tab-pane#invoices .tab-header svg path, #contents .tab-content .tab-pane#dashboard .tab-header svg path, #contents .tab-content .tab-pane#customers .tab-header svg path, #contents .tab-content .tab-pane#bills .tab-header svg path, #contents .tab-content .tab-pane#expenses .tab-header svg path, #contents .tab-content .tab-pane#vendors .tab-header svg path, #contents .tab-content .tab-pane#cashbank .tab-header svg path, #contents .tab-content .tab-pane#cashflow .tab-header svg path, #contents .tab-content .tab-pane#products .tab-header svg path, #contents .tab-content .tab-pane#transactions .tab-header svg path, #contents .tab-content .tab-pane#accounts .tab-header svg path, #contents .tab-content .tab-pane#reports .tab-header svg path {
+  stroke: #292929;
+}
+@media (max-width: 599px) {
+  #contents .tab-content .tab-pane#invoices .tab-header, #contents .tab-content .tab-pane#dashboard .tab-header, #contents .tab-content .tab-pane#customers .tab-header, #contents .tab-content .tab-pane#bills .tab-header, #contents .tab-content .tab-pane#expenses .tab-header, #contents .tab-content .tab-pane#vendors .tab-header, #contents .tab-content .tab-pane#cashbank .tab-header, #contents .tab-content .tab-pane#cashflow .tab-header, #contents .tab-content .tab-pane#products .tab-header, #contents .tab-content .tab-pane#transactions .tab-header, #contents .tab-content .tab-pane#accounts .tab-header, #contents .tab-content .tab-pane#reports .tab-header {
+    height: auto;
+    flex-direction: row;
+    padding-bottom: unset;
+  }
+  #contents .tab-content .tab-pane#invoices .tab-header svg, #contents .tab-content .tab-pane#dashboard .tab-header svg, #contents .tab-content .tab-pane#customers .tab-header svg, #contents .tab-content .tab-pane#bills .tab-header svg, #contents .tab-content .tab-pane#expenses .tab-header svg, #contents .tab-content .tab-pane#vendors .tab-header svg, #contents .tab-content .tab-pane#cashbank .tab-header svg, #contents .tab-content .tab-pane#cashflow .tab-header svg, #contents .tab-content .tab-pane#products .tab-header svg, #contents .tab-content .tab-pane#transactions .tab-header svg, #contents .tab-content .tab-pane#accounts .tab-header svg, #contents .tab-content .tab-pane#reports .tab-header svg {
+    width: 35px;
+  }
+  #contents .tab-content .tab-pane#invoices .tab-header .title-info .title, #contents .tab-content .tab-pane#dashboard .tab-header .title-info .title, #contents .tab-content .tab-pane#customers .tab-header .title-info .title, #contents .tab-content .tab-pane#bills .tab-header .title-info .title, #contents .tab-content .tab-pane#expenses .tab-header .title-info .title, #contents .tab-content .tab-pane#vendors .tab-header .title-info .title, #contents .tab-content .tab-pane#cashbank .tab-header .title-info .title, #contents .tab-content .tab-pane#cashflow .tab-header .title-info .title, #contents .tab-content .tab-pane#products .tab-header .title-info .title, #contents .tab-content .tab-pane#transactions .tab-header .title-info .title, #contents .tab-content .tab-pane#accounts .tab-header .title-info .title, #contents .tab-content .tab-pane#reports .tab-header .title-info .title {
+    font-size: 15px;
+  }
+}
+#contents .tab-content .tab-pane#dashboard svg, #contents .tab-content .tab-pane#customers svg, #contents .tab-content .tab-pane#bills svg, #contents .tab-content .tab-pane#expenses svg, #contents .tab-content .tab-pane#vendors svg, #contents .tab-content .tab-pane#cashbank svg, #contents .tab-content .tab-pane#cashflow svg, #contents .tab-content .tab-pane#products svg, #contents .tab-content .tab-pane#transactions svg, #contents .tab-content .tab-pane#accounts svg, #contents .tab-content .tab-pane#reports svg {
+  transform: scale(1.8);
+  margin-right: 5px;
+}
+#contents .tab-content .tab-pane#dashboard .tab-header, #contents .tab-content .tab-pane#customers .tab-header, #contents .tab-content .tab-pane#bills .tab-header, #contents .tab-content .tab-pane#expenses .tab-header, #contents .tab-content .tab-pane#vendors .tab-header, #contents .tab-content .tab-pane#cashbank .tab-header, #contents .tab-content .tab-pane#cashflow .tab-header, #contents .tab-content .tab-pane#products .tab-header, #contents .tab-content .tab-pane#transactions .tab-header, #contents .tab-content .tab-pane#accounts .tab-header, #contents .tab-content .tab-pane#reports .tab-header {
+  padding: 0.35rem 0;
+}
 
 .general-modal .modal-header {
   background-color: rgb(15, 77, 212);
@@ -1083,6 +1133,58 @@ body {
 
 .overflow-x-hidden {
   overflow-x: hidden !important;
+}
+
+.other-tabs {
+  font-size: 16px;
+  padding: 3rem 0;
+  color: rgba(41, 41, 41, 0.8);
+  font-weight: 500;
+}
+.other-tabs i {
+  color: rgb(142, 64, 255);
+}
+.other-tabs span {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 30px;
+  color: rgb(13, 101, 216);
+}
+@media (max-width: 991px) {
+  .other-tabs {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .other-tabs i {
+    font-size: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .other-tabs::before {
+    content: "";
+    display: inline-flex;
+    width: 3px;
+    height: 70px;
+    background: rgba(41, 41, 41, 0.8);
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+@media (min-width: 600px) {
+  .tab-table-tabs-contents #all-invoice,
+  .tab-table-tabs-contents #progress,
+  .tab-table-tabs-contents #waiting,
+  .tab-table-tabs-contents #drafts,
+  .tab-table-tabs-contents #canceled,
+  .tab-table-tabs-contents #archived {
+    height: 100vh;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

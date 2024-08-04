@@ -31,6 +31,69 @@ $(document).ready(function () {
       $("#sidebar-container").toggleClass("active");
       $(".page-container").toggleClass("w-wider");
     });
+
+    // Function to handle clicks outside the sidebar
+    function handleClickOutsideSidebar(event) {
+      if (!$(event.target).closest("#sidebar-container, .side-arrow").length) {
+        $("#sidebar-container").removeClass("active");
+        $(".side-arrow").removeClass("active");
+        $(".page-container").removeClass("w-wider");
+      }
+    }
+
+    /************************************************************************************************************************************************/
+
+    // Sidebar operations
+    // Function to handle clicks on .nav-link when the sidebar is active
+    function handleSideBarNavLinkClick() {
+      $("#sidebar-container").removeClass("active");
+      $(".side-arrow").removeClass("active");
+      $(".page-container").removeClass("w-wider");
+    }
+
+    // Check width and bind events
+    function checkWidthAndBindSideBarEvents() {
+      if (window.matchMedia("(max-width: 599px)").matches) {
+        $(document).on("click", handleClickOutsideSidebar);
+        $(document).on("click", ".nav-link", handleSideBarNavLinkClick);
+      } else {
+        $(document).off("click", handleClickOutsideSidebar);
+        $(document).off("click", ".nav-link", handleSideBarNavLinkClick);
+      }
+    }
+
+    // Initial check
+    checkWidthAndBindSideBarEvents();
+
+    // Check width on resize
+    $(window).resize(checkWidthAndBindSideBarEvents);
+
+    /************************************************************************************************************************************************/
+
+    // Navbar operations
+    // Function to handle clicks outside the navbar-collapse
+    function handleClickOutsideNavbar(event) {
+      if (
+        !$(event.target).closest(".navbar-collapse").length &&
+        !$(event.target).closest(".navbar-toggler").length
+      ) {
+        $(".navbar-collapse").removeClass("show");
+      }
+    }
+
+    // Function to handle clicks on .nav-link
+    function handleNavbarNavLinkClick() {
+      $(".navbar-collapse").removeClass("show");
+    }
+
+    // check if the navbar-toggler is clicked
+    $(".navbar-toggler").on("click", function () {
+      $(".navbar-collapse").toggleClass("show");
+    });
+
+    // bind events
+    $(document).on("click", handleClickOutsideNavbar);
+    $(document).on("click", ".nav-link", handleNavbarNavLinkClick);
   });
 
   // Load the header file

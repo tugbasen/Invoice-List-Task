@@ -16,7 +16,11 @@
   Bazı alanlarda Desktop için ayrı, Mobile için ayrı olacak şekilde tasarımda değişikliğe gidilmesi.
 - Projenin okuma, takip ve incelenme aşamalarını kolaylaştırmak adına birçok noktada yorum bırakılması
 
-Keyifli incelemeler!
+## IMPROVMENTS
+
+- Projenin sidebar'ında, aktif olan tab'a göre URL'de path olarak güncellenmesini sağlamak istedim. Örneğin, 'Invoices' tab aktif olduğunda URL'nin http://localhost:1000/invoice şeklinde olmasını planladım. Ancak, proje bir sunucu kurulumu gerektirmediği için, sayfa yenilemelerinde sunucu yönlendirmesi başarısız oldu. JavaScript ile sadece tab adını uzantısı olmadan URL path'inde göstermek için bir deneme yaptım ve projeyi Heroku üzerinde canlıya aldım. Fakat sayfa yenilemelerinde 404 hatası verdiği için bu özelliği kaldırmak durumunda kaldım.
+
+Bu özellik, sunucu taraflı yönlendirme desteği ile tam olarak uygulanabilir.
 
 ## Kurulum
 
@@ -43,3 +47,5 @@ npx sass --watch scss:css
     SCSS dosyalarını scss klasöründe düzenleyebilirsiniz.
     Değişikliklerin CSS'e yansımasını sağlamak için yukarıdaki npx sass --watch komutunu kullanın.
     Projeyi tarayıcınızda görüntülemek için index.html dosyasını açın.
+
+Keyifli incelemeler!

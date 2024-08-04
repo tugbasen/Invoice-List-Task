@@ -48,4 +48,8 @@ npx sass --watch scss:css
     Değişikliklerin CSS'e yansımasını sağlamak için yukarıdaki npx sass --watch komutunu kullanın.
     Projeyi tarayıcınızda görüntülemek için index.html dosyasını açın.
 
+## LIVE
+
+https://lit-everglades-98238-bb4ead408cb0.herokuapp.com/
+
 Keyifli incelemeler!

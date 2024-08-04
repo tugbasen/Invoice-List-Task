@@ -28,7 +28,16 @@
 </head>
 
 <body>
-
+    <div class="loader">
+        <div class="stack">
+            <div class="blobs">
+                <span class="blob"></span>
+                <span class="blob"></span>
+                <span class="blob"></span>
+                <span class="blob"></span>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid index-wrapper overflow-x-hidden m-0 p-0">
         <!-- Sidebar is included in components/sidebar.html  -->
         <div id="sidebar-container" data-mod="desktop"></div>
@@ -69,6 +78,15 @@
     </script>
     <!-- JS -->
     <script src="script.js"></script>
+
+    <script>
+        // Loader
+        document.addEventListener("DOMContentLoaded", function () {
+            window.addEventListener("load", function () {
+                document.querySelector(".loader").style.display = "none";
+            });
+        });
+    </script>
 </body>
 
 </html>

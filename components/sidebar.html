@@ -357,3 +357,47 @@
         <span class="me-2">All Reports</span>
     </a>
 </div>
+
+<script>
+    // I added the following script to display the active tab in the URL and to facilitate link sharing.
+    // However, since there is no pagination with the specified tab IDs in the project, the .html extension has been removed from the URL.
+    $(document).ready(function () {
+        var baseUrl = '/';
+
+        function activateTab(tabId) {
+            var tab = new bootstrap.Tab($('#' + tabId)[0]);
+            tab.show();
+        }
+
+        function redirectToBaseUrl() {
+            // Redirect to the base URL
+            history.replaceState(null, null, baseUrl);
+            activateTab('incomes-tab');
+        }
+
+        // Show the default tab
+        redirectToBaseUrl();
+
+        $('#myTab a').on('click', function (e) {
+            e.preventDefault();
+            var targetId = $(this).attr('id');
+
+            // Add new history state
+            history.pushState(null, null, baseUrl + targetId);
+            activateTab(targetId);
+        });
+
+        window.addEventListener('popstate', function () {
+            // Remove the .html extension from the URL
+            var path = window.location.pathname;
+            var tabId = path.replace(baseUrl, '').replace('.html', '');
+
+            // If tabId is empty, redirect to the home page
+            if (!tabId) {
+                redirectToBaseUrl();
+            } else {
+                activateTab(tabId);
+            }
+        });
+    });
+</script>
